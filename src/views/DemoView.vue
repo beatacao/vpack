@@ -2,13 +2,15 @@
   <div class="demos-view">
     <ul>
         <li><router-link to="/demos/markdown" exact>markdown</router-link></li>
+        <li><router-link to="/demos/gitcommit" exact>gitcommit</router-link></li>
+        <li><router-link to="/demos/firebase" exact>firebase</router-link></li>
+        <li><router-link to="/demos/grid" exact>gridtable</router-link></li>
+        <li><router-link to="/demos/tree" exact>tree</router-link></li>
     </ul>
-    <Markdown></Markdown>
   </div>
 </template>
 
 <script>
-  import Markdown from '../components/demos/Markdown.vue'
   
   export default {
     data () {
@@ -17,7 +19,7 @@
       }
     },
     components: {
-      Markdown
+      // Markdown
     },
     mounted: function(){
       this.$emit('ViewMounted');

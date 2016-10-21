@@ -9,7 +9,9 @@
     "server": "node ./server/app.js"
   },
   "dependencies": {
+    "firebase": "^3.5.0",
     "lodash": "^4.16.4",
+    "marked": "^0.3.6",
     "mint-ui": "^2.0.0-rc.2",
     "moment": "^2.15.1",
     "vue": "^2.0.1",

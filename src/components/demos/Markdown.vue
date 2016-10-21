@@ -1,15 +1,18 @@
 <template>
-    <div id="editor">
+    <div id="markdown">
         <textarea :value="input" @input="update"></textarea>
         <div v-html="compiledMarkdown"></div>
     </div>
 </template>
 
 <script>
+    import marked from 'marked'
+
     export default {
-        el: '#editor',
-        data: {
-            input: '# hello'
+        data() {
+            return {
+                input: '# hello'
+            }
         },
         computed: {
             compiledMarkdown: function () {
@@ -20,19 +23,22 @@
             update: _.debounce(function (e) {
                 this.input = e.target.value
             }, 300)
+        },
+        mounted: function(){
+            $('#markdown').css('height', document.documentElement.clientHeight - $('header').height() - $('footer').height())
         }
     }
 </script>
 
 <style scoped>
-    html, body, #editor {
+    html, body, #markdown {
         margin: 0;
         height: 100%;
         font-family: 'Helvetica Neue', Arial, sans-serif;
         color: #333;
     }
 
-    textarea, #editor div {
+    textarea, #markdown div {
         display: inline-block;
         width: 49%;
         height: 100%;

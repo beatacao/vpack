@@ -53,7 +53,8 @@ module.exports = {
   resolve: {
     alias: {
       'zepto': path.join(__dirname, './node_modules/webpack-zepto/index.js'),
-      'lodash': path.join(__dirname, './node_modules/lodash/lodash.js')
+      'lodash': path.join(__dirname, './node_modules/lodash/lodash.js'),
+      'vue': path.join(__dirname, './node_modules/vue/dist/vue.js')
     }
   },
   plugins: [
