@@ -474,7 +474,6 @@ body,html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 16px;
     line-height: 1;
     overflow: hidden;
     padding: 16px 10px;
@@ -490,7 +489,7 @@ body,html {
     content: " ";
     width: 100%;
     height: 1;
-    border-top: 1px solid;
+    /*border-top: 1px solid;*/
     top: 0;
     left: 0;
     position: absolute;
@@ -559,7 +558,6 @@ body,html {
 .mint-cell-label {
     color: #888;
     display: block;
-    font-size: 14px;
     margin-top: 14px
 }
 
@@ -666,10 +664,6 @@ body,html {
     margin-left: 20px
 }
 
-.mint-field-state .mintui {
-    font-size: 20px
-}
-
 .mint-field-state.is-success {
     color: #4caf50
 }
@@ -690,19 +684,16 @@ body,html {
 
 .mint-badge.is-size-large {
     border-radius: 14px;
-    font-size: 18px;
     padding: 2px 10px
 }
 
 .mint-badge.is-size-small {
     border-radius: 8px;
-    font-size: 12px;
     padding: 2px 6px
 }
 
 .mint-badge.is-size-normal {
     border-radius: 12px;
-    font-size: 15px;
     padding: 2px 8px
 }
 
@@ -1066,7 +1057,6 @@ body,html {
 
 .mint-tab-item {
     display: block;
-    padding: 7px 0;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1
@@ -1090,7 +1080,6 @@ body,html {
 
 .mint-tab-item-label {
     color: inherit;
-    font-size: 12px;
     line-height: 1
 }
 
@@ -1124,11 +1113,6 @@ body,html {
     display: -ms-flexbox;
     display: flex;
     text-align: center
-}
-
-.mint-navbar .mint-tab-item {
-    padding: 17px 0;
-    font-size: 15px
 }
 
 .mint-navbar .mint-tab-item:last-child {
@@ -1252,7 +1236,6 @@ body,html {
 }
 
 .mint-searchbar-inner .mintui-search {
-    font-size: 12px;
     color: #d9d9d9
 }
 
@@ -1274,7 +1257,6 @@ body,html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 12px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -1283,10 +1265,6 @@ body,html {
     bottom: 0;
     left: 0;
     position: absolute
-}
-
-.mint-searchbar-placeholder .mintui-search {
-    font-size: 12px
 }
 
 .mint-searchbar-cancel {
@@ -1320,7 +1298,6 @@ body,html {
 .mint-checklist-title {
     color: #888;
     display: block;
-    font-size: 12px;
     margin: 8px
 }
 
@@ -1390,7 +1367,6 @@ body,html {
 }
 
 .mint-radiolist-title {
-    font-size: 12px;
     margin: 8px;
     display: block;
     color: #888
@@ -1512,7 +1488,6 @@ body,html {
     width: 100%;
     height: 45px;
     line-height: 45px;
-    font-size: 18px;
     color: #333;
     background-color: #fff
 }
@@ -1788,7 +1763,6 @@ body,html {
     justify-content: center;
     padding: 0;
     text-align: right;
-    font-size: 24px;
     position: relative
 }
 
@@ -1830,7 +1804,6 @@ body,html {
 }
 
 .picker-slot {
-    font-size: 18px;
     overflow: hidden;
     position: relative;
     max-height: 100%
@@ -2011,11 +1984,9 @@ body,html {
 .mint-toast-icon {
     display: block;
     text-align: center;
-    font-size: 56px
 }
 
 .mint-toast-text {
-    font-size: 14px;
     display: block;
     text-align: center
 }
@@ -2047,7 +2018,6 @@ body,html {
     color: #fff;
     text-align: center;
     margin-top: 10px;
-    font-size: 16px
 }
 
 .mint-indicator-spin {
@@ -2127,7 +2097,6 @@ body,html {
     background-color: #fff;
     width: 85%;
     border-radius: 3px;
-    font-size: 16px;
     -webkit-user-select: none;
     overflow: hidden;
     opacity: 1;
@@ -2172,13 +2141,11 @@ body,html {
 
 .msgbox-errormsg {
     color: red;
-    font-size: 12px;
     min-height: 16px
 }
 
 .msgbox-title {
     padding-left: 10px;
-    font-size: 16px;
     font-weight: 700;
     color: #333;
     margin-bottom: 8px
@@ -2188,7 +2155,6 @@ body,html {
     float: left;
     width: 36px;
     height: 36px;
-    font-size: 36px!important
 }
 
 .msgbox-status.icon-success {
@@ -2211,7 +2177,6 @@ body,html {
 }
 
 .msgbox-btns,.msgbox-message {
-    font-size: 16px;
     text-align: center
 }
 
@@ -2357,7 +2322,6 @@ body,html {
     width: 50%;
     text-align: center;
     line-height: 40px;
-    font-size: 16px;
     color: #26a2ff
 }
 
@@ -2413,7 +2377,6 @@ body,html {
 
 .mint-indexlist-navitem {
     padding: 2px 6px;
-    font-size: 12px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -2582,7 +2545,6 @@ body,html {
 }
 
 .page-popup .mint-popup-1 h1 {
-    font-size: 20px;
     color: #26a2ff
 }
 
@@ -2808,7 +2770,6 @@ body,html {
 .page-swipe .swipe {
     height: 200px;
     color: #fff;
-    font-size: 30px;
     text-align: center;
     margin-bottom: 20px
 }

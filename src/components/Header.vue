@@ -2,18 +2,24 @@
     <div class='header'>
         <header class="v-header">
             <router-link class='logo' to="/" exact>
-            logo
+                <img :src="logo" alt="logo" />
             </router-link>
-            <!--<img v-bind:src="image" alt="logo" class="header-logo" v-link="{'name':'index'}">-->
             <div class="close" v-on:click="open()"><span class="close-icon" v-bind:class="{'open':isOpen}"></span></div>
         </header>
-        <nav v-if="isOpen" class="v-nav" transition="nav">
+        <nav v-if="isOpen" class="v-nav">
             <ul>
                 <li v-on:click="close()"><router-link to="/" exact>首页</router-link></li>
-                <li v-on:click="close()"><router-link to="/demos" exact>vue示例</router-link></li>
+                <li v-on:click="close()"><router-link to="/inhc" exact>走进和昌</router-link></li>
+                <li v-on:click="close()"><router-link to="/mall" exact>和昌商城</router-link></li>
+                <li v-on:click="close()"><router-link to="/news" exact>新闻中心</router-link></li>
+                <li v-on:click="close()"><router-link to="/cooperation" exact>商务合作</router-link></li>
+                <li v-on:click="close()"><router-link to="/join" exact>加盟和昌</router-link></li>
+                <li v-on:click="close()"><router-link to="/livein" exact>住在和昌</router-link></li>
+                <li v-on:click="close()"><router-link to="/info" exact>和昌黑板报</router-link></li>
+                <!--<li v-on:click="close()"><router-link to="/demos" exact>vue示例</router-link></li>-->
             </ul>
         </nav>
-        <div v-if="isOpen" class="nav-mask" transition="mask" v-on:click="isOpen = false" @touchmove.stop.prevent></div>
+        <div v-if="isOpen" class="nav-mask" v-on:click="isOpen = false" @touchmove.stop.prevent></div>
     </div>
 </template>
 
@@ -22,8 +28,8 @@
 export default {
     data() {
         return {
-            'isOpen': false
-            // 'image': require('../assets/logo.png')
+            'isOpen': false,
+            'logo': require('../assets/images/logo.jpg')
         };
     },
     'methods': {
@@ -42,20 +48,15 @@ export default {
 };
 </script>
 
-<style lang='sass' scoped>
+<style lang='sass'>
+@import '../assets/sass/var.scss';
+
 .header{
-    .logo{
-        float:left; margin-left:15px;
-        width:1rem; height:0.3rem; background:blue; color:#fff; text-align:center; line-height:0.3rem;
-    }
+    width:100%; height:0.98rem; background:#fff;
 }
 .v-header {
     position:relative;
-    background-color: #26a2ff;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
@@ -63,140 +64,78 @@ export default {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    padding:15px 0;
     width: 100%;
-    z-index: 1000;
-}
+    .logo{
+        float:left; margin-left:0.18rem; margin-top:0.16rem;
+        width:2.15rem; height:0.65rem;
+        img{
+            display:block; width:100%;
+        }
+    }
+    .close {
+        position:absolute; right:0.18rem; top: 0.16rem; z-index:110;
+        height: 0.5rem; width: 0.5rem; 
+    }
+    .close-icon {
+        display: inline-block; *display:inline; zoom:1;
+        line-height: 0.2rem; position: relative;
+    }
+    .close-icon, .close-icon:after, .close-icon:before {
+        width: 0.3rem; height: 0.02rem; background-color: $blue_logo; 
+        -webkit-transition: .3s; transition: .3s; border-radius: 1px;
+    }
 
-.v-header .header-logo {
-    height: 0.3rem;
-}
+    .close-icon:after,.close-icon:before {
+        content: '';
+        position: absolute;
+        -webkit-transform-origin: left 50%;
+        transform-origin: left 50%;
+        outline: 1px solid transparent;
+    }
 
-.v-header .close {
-    position:absolute;
-    right:0.2rem;
-    height: 0.25rem;
-    width: 0.25rem;
-    margin-top: 2px;
-}
+    .close-icon:before {
+        top: -0.08rem;
+    }
 
-.v-header .close-icon {
-    display: inline-block;
-    line-height: 0.2rem;
-    position: relative;
-}
+    .close-icon:after {
+        bottom: -0.08rem;
+    }
 
-.v-header .close-icon,.v-header .close-icon:after,.v-header .close-icon:before {
-    width: 0.25rem;
-    height: 0.02rem;
-    background-color: #fff;
-    -webkit-transition: .3s;
-    transition: .3s;
-    border-radius: 1px;
-}
+    .close-icon.open {
+        background-color: transparent;
+    }
+    .close-icon.open:after,.close-icon.open:before {
+        width: 0.3rem; background-color: #fff; top: -0.1rem;
+    }
 
-.v-header .close-icon:after,.v-header .close-icon:before {
-    content: '';
-    position: absolute;
-    -webkit-transform-origin: left 50%;
-    transform-origin: left 50%;
-    outline: 1px solid transparent;
-}
+    .close-icon.open:before {
+        -webkit-transform: translate3d(0,0,0) rotate(45deg);
+        transform: translate3d(0,0,0) rotate(45deg);
+    } 
 
-.v-header .close-icon:before {
-    top: -0.08rem;
-}
-
-.v-header .close-icon:after {
-    bottom: -0.08rem;
-}
-
-.v-header .close-icon.open {
-    background-color: #26a2ff;
-}
-
-.v-header .close-icon.open:after,.v-header .close-icon.open:before {
-    width: 0.29rem;
-}
-
-.v-header .close-icon.open:before {
-    -webkit-transform: translate3d(0,-2px,0) rotate(45deg);
-    transform: translate3d(0,-2px,0) rotate(45deg);
-}
-
-.v-header .close-icon.open:after {
-    -webkit-transform: translate3d(0,2px,0) rotate(-45deg);
-    transform: translate3d(0,2px,0) rotate(-45deg);
-}
-
-.v-header .header-menu {
-    height: 0.16rem;
-    margin-top: 0.06rem;
-}
-
-.v-header .header-close {
-    height: 0.2rem;
-    margin-top: 0.06rem;
-}
+    .close-icon.open:after {
+        -webkit-transform: translate3d(0,11px,0) rotate(-45deg);
+        transform: translate3d(0,11px,0) rotate(-45deg);
+    }
+} 
 
 .v-nav {
-    position: fixed;
-    z-index: 100;
-    width: 2.15rem;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff;
-    padding: 0.7rem 0 0 0.25rem;
-}
-
-.v-nav ul {
-    list-style: none;
-}
-
-.v-nav li {
-    height: 0.45rem;
-    line-height: 0.45rem;
-    color: #333;
-    font-size: 16px;
-    border-bottom: 1px solid #eee;
-}
-
-.v-nav a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-}
-
-.v-nav .v-link-active {
-    color: #26a2ff;
+    position: fixed; z-index: 100; top: 0.98rem; right: 0; bottom: 0;
+    background: #fff; width:3rem;
+    padding: 0.7rem 0 0;
+    ul {
+        padding:0; text-align:center;
+        li {
+            height: 0.9rem; line-height: 0.9rem; color: #000; font-size: 16px;
+            a {
+                text-decoration: none; color: #000; display: block;
+            }
+        }
+    }
 }
 
 .nav-mask {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    position: fixed; z-index: 99; top: 0; left: 0; bottom: 0; right: 0;
     background-color: rgba(0,0,0,.4);
-}
-
-.nav-transition,.mask-transition {
-    -webkit-transition: .2s linear;
-    transition: .2s linear;
-}
-
-.nav-enter,.nav-leave {
-    -webkit-transform: translate3d(2.15rem,0,0);
-    transform: translate3d(2.15rem,0,0);
-}
-
-.mask-enter,.mask-leave {
-    background-color: transparent;
-}
-
-.logout-toast {
-    width: 80%;
 }
 </style>

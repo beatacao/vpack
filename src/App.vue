@@ -42,19 +42,37 @@
 <style lang="sass">
   @media screen and (max-width: 321px) {
       body {
-          font-size:16px;
+          font-size:14px;
+      }
+      footer{
+        font-size:10px;
+      }
+      .mint-tab-item{
+        font-size:15px;
       }
   }
 
   @media screen and (min-width: 321px) and (max-width:400px) {
       body {
-          font-size:17px
+          font-size:15px
+      }
+      footer{
+        font-size:12px;
+      }
+      .mint-tab-item{
+        font-size:16px;
       }
   }
 
   @media screen and (min-width: 400px) {
       body {
-          font-size:19px
+          font-size:16px
+      }
+      footer{
+        font-size:14px;
+      }
+      .mint-tab-item{
+        font-size:18px;
       }
   }
   body{
