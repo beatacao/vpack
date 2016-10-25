@@ -1,5 +1,5 @@
 <template>
-    <div class='header'>
+    <div id='header' class='header'>
         <header class="v-header">
             <router-link class='logo' to="/" exact>
                 <img :src="logo" alt="logo" />

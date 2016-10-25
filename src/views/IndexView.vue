@@ -4,7 +4,10 @@
        <Swipe :data="swipe"></Swipe>
         <div class="navbarContainer">
             <Navbar :items='navbar' :selected='selected' v-on:selectChanged='selectChanged'></Navbar>
-            <Tablist :list='list'></Tablist>
+            <Tablist v-infinite-scroll="loadMore"
+                    infinite-scroll-disabled="loading"
+                    infinite-scroll-distance="0"
+            class='listContainer' ref='listContainer' :list='list'></Tablist>
         </div>
     </div>
 </template>
@@ -64,7 +67,11 @@
                     }while(arr.length<length)
 
                     arr.filter(function(item, i){
-                        return item.url = '/news/detail/' + item.id;
+                        item.url = '/news/detail/' + item.id;
+                        if(!(i%2)){
+                            item.imgUrl = '../../src/assets/images/home/data/swipe/swipe.jpg';
+                        }
+                        return item;
                     })
 
                     self.list = arr;
@@ -107,14 +114,31 @@
                         self.$emit('ViewMounted');
                     });
                 }, 2000);
+            },
+            loadMore: function(){
+                this.loading = true;
+                setTimeout(() => {
+                    let last = this.list[this.list.length - 1];
+                    for (let i = 1; i <= 10; i++) {
+                        this.list.push({'title': '选项卡'+this.selected, 'publishTime': '2015-09-10', 'id':1});
+                    }
+                    this.loading = false;
+                }, 2500);
             }
         },
         mounted: function(){
+            this.$refs['listContainer'].$el.style.height =  document.documentElement.clientHeight - 
+                                                            document.getElementById('header').offsetHeight - 
+                                                            document.getElementById('footer').offsetHeight - 
+                                                            document.getElementById('swipe').offsetHeight -
+                                                            document.getElementById('navbar').offsetHeight + 'px';
             this.$emit('ViewMounted');
         }
     };
 </script>
 
 <style lang="sass">
-
+.listContainer{
+    overflow-y: scroll;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <mt-navbar v-model='navSelected'>
+    <mt-navbar id='navbar' v-model='navSelected'>
         <mt-tab-item v-for="item in navItems.tabItems" :id="item.id" :class='{"is-selected": (item.id==navSelected)}' v-html="item.content"></mt-tab-item>
     </mt-navbar>
 </template>

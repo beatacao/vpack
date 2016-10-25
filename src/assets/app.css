@@ -528,10 +528,6 @@ body,html {
     content: none
 }
 
-.mint-cell:before {
-    left: 10px
-}
-
 .mint-cell:last-child:before {
     left: 0
 }

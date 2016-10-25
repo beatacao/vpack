@@ -1,5 +1,5 @@
 <template>
-    <mt-swipe :auto="4000">
+    <mt-swipe id='swipe' :auto="4000">
         <mt-swipe-item v-for="obj in swipeData">
             <a :href="obj.link"><img :src="obj.img" alt=""></a>
         </mt-swipe-item>
